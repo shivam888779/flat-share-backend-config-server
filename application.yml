@@ -5,8 +5,8 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://eureka-lb:80/eureka}
 
 spring:
   zipkin:
-    baseUrl: http://zipkin-svc:9411
+    baseUrl: ${SPRING_ZIPKIN_BASEURL:http://zipkin-svc:9411}
